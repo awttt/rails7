@@ -1,0 +1,49 @@
+Started GET "/" for 127.0.0.1 at 2022-08-28 22:28:48 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 14815)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-08-28 22:28:49 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+UserMailer#welcome_email: processed outbound mail in 15.9ms
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (Duration: 0.7ms | Allocations: 400)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.2ms | Allocations: 635)
+UserMailer#welcome_email: processed outbound mail in 11.1ms
+Delivered mail 630b7f6ea3177_224bab447698@aa98e321e18d.mail (829.3ms)
+Date: Sun, 28 Aug 2022 22:45:02 +0800
+From: anwenteng@foxmail.com
+To: anwenteng@foxmail.com
+Message-ID: <630b7f6ea3177_224bab447698@aa98e321e18d.mail>
+Subject: hi
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  hi 112233
+  </body>
+</html>
+  </body>
+</html>
+
