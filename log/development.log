@@ -47,3 +47,53 @@ Content-Transfer-Encoding: 7bit
   </body>
 </html>
 
+UserMailer#welcome_email: processed outbound mail in 23.8ms
+UserMailer#welcome_email: processed outbound mail in 2.6ms
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mValidationCode Create (2.4ms)[0m  [1m[32mINSERT INTO "validation_codes" ("email", "kind", "code", "used_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "350944364@qq.com"], ["kind", 0], ["code", "1234"], ["used_at", nil], ["created_at", "2022-08-29 02:59:55.646126"], ["updated_at", "2022-08-29 02:59:55.646126"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+UserMailer#welcome_email: processed outbound mail in 3.0ms
+UserMailer#welcome_email: processed outbound mail in 2.6ms
+UserMailer#welcome_email: processed outbound mail in 3.0ms
+  [1m[36mValidationCode Load (0.3ms)[0m  [1m[34mSELECT "validation_codes".* FROM "validation_codes" WHERE "validation_codes"."email" = $1 LIMIT $2[0m  [["email", "350944364@qq.com"], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (Duration: 0.9ms | Allocations: 404)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.5ms | Allocations: 639)
+UserMailer#welcome_email: processed outbound mail in 62.8ms
+Delivered mail 630c2c4a3b906_1eefaf06105f@aa98e321e18d.mail (858.7ms)
+Date: Mon, 29 Aug 2022 11:02:34 +0800
+From: anwenteng@foxmail.com
+To: 350944364@qq.com
+Message-ID: <630c2c4a3b906_1eefaf06105f@aa98e321e18d.mail>
+Subject: =?UTF-8?Q?=E9=AA=8C=E8=AF=81=E7=A0=81?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+  =E4=BD=A0=E6=AD=A3=E5=9C=A8=E7=99=BB=E5=BD=95=E5=B1=B1=E7=AB=B9=E8=AE=B0=
+=E8=B4=A6=EF=BC=8C=E9=AA=8C=E8=AF=81=E7=A0=81=EF=BC=9A 1234=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
