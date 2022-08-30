@@ -15,7 +15,7 @@ resource "账目" do
     let(:created_before) { '2020-11-11'}
     let(:current_user) { User.create email: '1@qq.com' }
     let(:auth) { "Bearer #{current_user.generate_jwt}" }
-    example "获取账目" do
+     example "获取账目" do
       11.times do Item.create amount: 100, created_at: '2020-10-30', user_id: current_user.id end
       do_request
       expect(status).to eq 200
