@@ -13,12 +13,18 @@ RSpec.describe "Items", type: :request do
     it "分页" do
       user1 = User.create email: '1@qq.com'
       user2 = User.create email: '2@qq.com'
-      11.times { Item.create amount: 100, user_id: user1.id }
-      11.times { Item.create amount: 100, user_id: user2.id }
-
+      tag1 = Tag.create name: 'tag1', sign: 'x', user_id: user1.id
+      tag2 = Tag.create name: 'tag2', sign: 'x', user_id: user2.id
+      11.times { Item.create amount: 100, user_id: user1.id, 
+      happen_at:'2018-01-01T00:00:00+08:00',tags_id: [tag1.id],kind: 1  }
+      11.times { Item.create amount: 100, user_id: user2.id, 
+      happen_at:'2018-01-01T00:00:00+08:00',tags_id: [tag2.id],kind: 1  }
       get '/api/v1/items', headers: user1.generate_auth_header
       expect(response).to have_http_status 200
       json = JSON.parse(response.body)
+      p '-----------'
+      p response.body
+      p '-----------'
       expect(json['resources'].size).to eq 10
       get '/api/v1/items?page=2', headers: user1.generate_auth_header
       expect(response).to have_http_status 200
