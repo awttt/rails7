@@ -132,3 +132,233 @@ Started GET "/" for 127.0.0.1 at 2022-09-02 00:11:18 +0800
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mTag Load (1.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."user_id" = $1[0m  [["user_id", 1]]
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started POST "/api/v1/validation_codes" for 127.0.0.1 at 2022-09-06 23:00:09 +0800
+  
+ActiveRecord::DatabaseConnectionError (There is an issue connecting to your database with your username/password, username: mangosteen.
+
+Please check your database configuration to ensure the username/password are valid.
+):
+  
+activerecord (7.0.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:83:in `rescue in new_client'
+activerecord (7.0.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.2.3) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.2.3) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.2.3) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.2.3) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.2.3) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.2.3) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.2.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.2.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.2.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.2.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.2.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.2.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.2.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.2.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.2.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5314735145977518240)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5314735145977518240)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/validation_codes" for 127.0.0.1 at 2022-09-06 23:07:18 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ValidationCodesController#create as HTML
+  Parameters: {"email"=>"350944364@qq.com", "validation_code"=>{"email"=>"350944364@qq.com"}}
+  [1m[36mValidationCode Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "validation_codes" WHERE "validation_codes"."email" = $1 AND "validation_codes"."kind" = $2 AND "validation_codes"."created_at" BETWEEN $3 AND $4 LIMIT $5[0m  [["email", "350944364@qq.com"], ["kind", 0], ["created_at", "2022-09-06 15:06:18.923688"], ["created_at", "2022-09-06 15:07:18.923754"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+  [1m[36mValidationCode Create (1.7ms)[0m  [1m[32mINSERT INTO "validation_codes" ("email", "kind", "code", "used_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "350944364@qq.com"], ["kind", 0], ["code", "205654"], ["used_at", nil], ["created_at", "2022-09-06 15:07:18.934536"], ["updated_at", "2022-09-06 15:07:18.934536"]]
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+  [1m[36mValidationCode Load (0.7ms)[0m  [1m[34mSELECT "validation_codes".* FROM "validation_codes" WHERE "validation_codes"."email" = $1 ORDER BY "create_at" DESC LIMIT $2[0m  [["email", "350944364@qq.com"], ["LIMIT", 1]]
+  ↳ app/mailers/user_mailer.rb:4:in `welcome_email'
+UserMailer#welcome_email: processed outbound mail in 5.8ms
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 7.8ms | Allocations: 38422)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "create_at" does not exist
+LINE 1: ...s" WHERE "validation_codes"."email" = $1 ORDER BY "create_at...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "validation_codes.created_at".
+):
+  
+app/mailers/user_mailer.rb:4:in `welcome_email'
+app/models/validation_code.rb:15:in `send_email'
+app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+lib/auto_jwt.rb:8:in `call'
+Started POST "/api/v1/validation_codes" for 127.0.0.1 at 2022-09-06 23:08:25 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ValidationCodesController#create as HTML
+  Parameters: {"email"=>"350944364@qq.com", "validation_code"=>{"email"=>"350944364@qq.com"}}
+  [1m[36mValidationCode Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "validation_codes" WHERE "validation_codes"."email" = $1 AND "validation_codes"."kind" = $2 AND "validation_codes"."created_at" BETWEEN $3 AND $4 LIMIT $5[0m  [["email", "350944364@qq.com"], ["kind", 0], ["created_at", "2022-09-06 15:07:25.318842"], ["created_at", "2022-09-06 15:08:25.318878"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+  [1m[36mValidationCode Create (0.6ms)[0m  [1m[32mINSERT INTO "validation_codes" ("email", "kind", "code", "used_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "350944364@qq.com"], ["kind", 0], ["code", "704828"], ["used_at", nil], ["created_at", "2022-09-06 15:08:25.330213"], ["updated_at", "2022-09-06 15:08:25.330213"]]
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+  [1m[36mValidationCode Load (0.9ms)[0m  [1m[34mSELECT "validation_codes".* FROM "validation_codes" WHERE "validation_codes"."email" = $1 ORDER BY "create_at" DESC LIMIT $2[0m  [["email", "350944364@qq.com"], ["LIMIT", 1]]
+  ↳ app/mailers/user_mailer.rb:4:in `welcome_email'
+UserMailer#welcome_email: processed outbound mail in 6.1ms
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 6.4ms | Allocations: 53881)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "create_at" does not exist
+LINE 1: ...s" WHERE "validation_codes"."email" = $1 ORDER BY "create_at...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "validation_codes.created_at".
+):
+  
+app/mailers/user_mailer.rb:4:in `welcome_email'
+app/models/validation_code.rb:15:in `send_email'
+app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+lib/auto_jwt.rb:8:in `call'
+Started POST "/api/v1/validation_codes" for 127.0.0.1 at 2022-09-06 23:10:01 +0800
+Processing by Api::V1::ValidationCodesController#create as HTML
+  Parameters: {"email"=>"anwenteng@foxmail.com", "validation_code"=>{"email"=>"anwenteng@foxmail.com"}}
+  [1m[36mValidationCode Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "validation_codes" WHERE "validation_codes"."email" = $1 AND "validation_codes"."kind" = $2 AND "validation_codes"."created_at" BETWEEN $3 AND $4 LIMIT $5[0m  [["email", "anwenteng@foxmail.com"], ["kind", 0], ["created_at", "2022-09-06 15:09:01.293549"], ["created_at", "2022-09-06 15:10:01.293603"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+  [1m[36mValidationCode Create (6.3ms)[0m  [1m[32mINSERT INTO "validation_codes" ("email", "kind", "code", "used_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "anwenteng@foxmail.com"], ["kind", 0], ["code", "790584"], ["used_at", nil], ["created_at", "2022-09-06 15:10:01.299868"], ["updated_at", "2022-09-06 15:10:01.299868"]]
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+  [1m[36mValidationCode Load (6.0ms)[0m  [1m[34mSELECT "validation_codes".* FROM "validation_codes" WHERE "validation_codes"."email" = $1 ORDER BY "create_at" DESC LIMIT $2[0m  [["email", "anwenteng@foxmail.com"], ["LIMIT", 1]]
+  ↳ app/mailers/user_mailer.rb:4:in `welcome_email'
+UserMailer#welcome_email: processed outbound mail in 9.1ms
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 14.7ms | Allocations: 3382)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "create_at" does not exist
+LINE 1: ...s" WHERE "validation_codes"."email" = $1 ORDER BY "create_at...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "validation_codes.created_at".
+):
+  
+app/mailers/user_mailer.rb:4:in `welcome_email'
+app/models/validation_code.rb:15:in `send_email'
+app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+lib/auto_jwt.rb:8:in `call'
+Started POST "/api/v1/validation_codes" for 127.0.0.1 at 2022-09-06 23:17:32 +0800
+Processing by Api::V1::ValidationCodesController#create as HTML
+  Parameters: {"email"=>"anwenteng@foxmail.com", "validation_code"=>{"email"=>"anwenteng@foxmail.com"}}
+  [1m[36mValidationCode Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "validation_codes" WHERE "validation_codes"."email" = $1 AND "validation_codes"."kind" = $2 AND "validation_codes"."created_at" BETWEEN $3 AND $4 LIMIT $5[0m  [["email", "anwenteng@foxmail.com"], ["kind", 0], ["created_at", "2022-09-06 15:16:32.083925"], ["created_at", "2022-09-06 15:17:32.083996"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+  [1m[36mValidationCode Create (0.6ms)[0m  [1m[32mINSERT INTO "validation_codes" ("email", "kind", "code", "used_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "anwenteng@foxmail.com"], ["kind", 0], ["code", "245367"], ["used_at", nil], ["created_at", "2022-09-06 15:17:32.090179"], ["updated_at", "2022-09-06 15:17:32.090179"]]
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+  [1m[36mValidationCode Load (0.7ms)[0m  [1m[34mSELECT "validation_codes".* FROM "validation_codes" WHERE "validation_codes"."email" = $1 ORDER BY "create_at" DESC LIMIT $2[0m  [["email", "anwenteng@foxmail.com"], ["LIMIT", 1]]
+  ↳ app/mailers/user_mailer.rb:4:in `welcome_email'
+UserMailer#welcome_email: processed outbound mail in 2.6ms
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 7.9ms | Allocations: 7466)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "create_at" does not exist
+LINE 1: ...s" WHERE "validation_codes"."email" = $1 ORDER BY "create_at...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "validation_codes.created_at".
+):
+  
+app/mailers/user_mailer.rb:4:in `welcome_email'
+app/models/validation_code.rb:15:in `send_email'
+app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+lib/auto_jwt.rb:8:in `call'
+Started POST "/api/v1/validation_codes" for 127.0.0.1 at 2022-09-06 23:21:10 +0800
+Processing by Api::V1::ValidationCodesController#create as HTML
+  Parameters: {"email"=>"anwenteng@foxmail.com", "validation_code"=>{"email"=>"anwenteng@foxmail.com"}}
+  [1m[36mValidationCode Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "validation_codes" WHERE "validation_codes"."email" = $1 AND "validation_codes"."kind" = $2 AND "validation_codes"."created_at" BETWEEN $3 AND $4 LIMIT $5[0m  [["email", "anwenteng@foxmail.com"], ["kind", 0], ["created_at", "2022-09-06 15:20:10.314957"], ["created_at", "2022-09-06 15:21:10.315000"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+  [1m[36mValidationCode Create (0.4ms)[0m  [1m[32mINSERT INTO "validation_codes" ("email", "kind", "code", "used_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "anwenteng@foxmail.com"], ["kind", 0], ["code", "289357"], ["used_at", nil], ["created_at", "2022-09-06 15:21:10.321871"], ["updated_at", "2022-09-06 15:21:10.321871"]]
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+  [1m[36mValidationCode Load (0.4ms)[0m  [1m[34mSELECT "validation_codes".* FROM "validation_codes" WHERE "validation_codes"."email" = $1 ORDER BY "validation_codes"."created_at" DESC LIMIT $2[0m  [["email", "anwenteng@foxmail.com"], ["LIMIT", 1]]
+  ↳ app/mailers/user_mailer.rb:3:in `welcome_email'
+  Rendering layout layouts/mailer.html.erb
+  Rendering user_mailer/welcome_email.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_email.html.erb within layouts/mailer (Duration: 0.8ms | Allocations: 166)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.8ms | Allocations: 402)
+UserMailer#welcome_email: processed outbound mail in 10.8ms
+Delivered mail 6317656653e61_2e192a6c-466@cc921c3830fa.mail (967.5ms)
+Date: Tue, 06 Sep 2022 23:21:10 +0800
+From: anwenteng@foxmail.com
+To: anwenteng@foxmail.com
+Message-ID: <6317656653e61_2e192a6c-466@cc921c3830fa.mail>
+Subject: =?UTF-8?Q?=E5=B1=B1=E7=AB=B9=E8=AE=B0=E8=B4=A6=E9=AA=8C=E8=AF=81=E7=A0=81?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta content=3D'text/html; charset=3DUTF-8' http-equiv=3D'Content-Ty=
+pe' />=0D
+  </head>=0D
+  <body>=0D
+  =E4=BD=A0=E6=AD=A3=E5=9C=A8=E7=99=BB=E5=BD=95=E5=B1=B1=E7=AB=B9=E8=AE=B0=
+=E8=B4=A6=EF=BC=8C=E9=AA=8C=E8=AF=81=E7=A0=81=EF=BC=9A 289357=0D
+  </body>=0D
+</html>=0D
+  </body>=0D
+</html>=0D
+
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/validation_codes_controller.rb:12:in `create'
+Completed 200 OK in 996ms (Views: 0.3ms | ActiveRecord: 9.7ms | Allocations: 13058)
+
+
