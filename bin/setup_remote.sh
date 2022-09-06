@@ -65,7 +65,6 @@ docker run -d -p 3000:3000 \
            -e RAILS_MASTER_KEY=$RAILS_MASTER_KEY \
            mangosteen:$version
 
-echo 'xixixiixixi'
 echo "是否要更新数据库？[y/N]"
 read ans
 case $ans in
@@ -87,3 +86,4 @@ docker run -d -p 8080:80 \
            nginx:latest
 
 title '全部执行完毕'
+docker ps
