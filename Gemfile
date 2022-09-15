@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source "https://gems.ruby-china.com"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.0"
@@ -41,6 +41,8 @@ gem 'kaminari'
 gem 'rspec_api_documentation', path:'./vendor/rspec_api_documentation'
 
 gem 'jwt'
+
+gem 'whenever', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
